@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nizar Hosni - Luxury Real Estate Sales Funnel Expert</title>
+    <title>VanguardEstate - Luxury Real Estate Sales Funnel Expert</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <style>
         :root {
-            --primary-color: #000;
-            --secondary-color: #fff;
-            --accent-color: #D4AF37;
-            --text-color: #333;
+            --primary-bg: #1a1a1a;
+            --secondary-bg: #2a2a2a;
+            --text-color: #e0e0e0;
+            --accent-color: #ffd700;
+            --accent-hover: #ffeb5c;
+            --card-bg: #333333;
         }
         * {
             margin: 0;
@@ -25,6 +27,7 @@
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
+            background-color: var(--primary-bg);
         }
         .container {
             width: 90%;
@@ -35,21 +38,23 @@
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
-            color: var(--secondary-color);
+            color: var(--primary-bg);
             padding: 12px 24px;
             text-decoration: none;
             border-radius: 4px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         .btn:hover {
-            background-color: #B8860B;
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
         }
         /* Hero Section */
         .hero {
-            background-image: url('https://via.placeholder.com/1920x1080.png?text=Luxury+Real+Estate');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080.png?text=Luxury+Real+Estate');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -57,12 +62,13 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: var(--secondary-color);
+            color: var(--text-color);
         }
         .hero-content {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(42, 42, 42, 0.8);
             padding: 40px;
             border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -81,11 +87,11 @@
             text-align: center;
             margin-bottom: 40px;
             font-size: 2rem;
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
         /* About Section */
         .about {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary-bg);
         }
         .about-content {
             display: flex;
@@ -104,10 +110,11 @@
             max-width: 100%;
             height: auto;
             border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
         }
         /* Services Section */
         .services {
-            background-color: #f9f9f9;
+            background-color: var(--primary-bg);
         }
         .services-grid {
             display: grid;
@@ -116,29 +123,32 @@
         }
         .service-item {
             text-align: center;
-            padding: 20px;
-            background-color: var(--secondary-color);
+            padding: 30px;
+            background-color: var(--card-bg);
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         .service-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.1);
         }
         .service-item i {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--accent-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         /* Testimonials Section */
         .testimonials {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary-bg);
         }
         .testimonial-card {
-            background-color: #f9f9f9;
+            background-color: var(--card-bg);
             padding: 30px;
             border-radius: 8px;
             margin-bottom: 30px;
             position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         .testimonial-card:before {
             content: '\201C';
@@ -151,16 +161,16 @@
         }
         /* CTA Section */
         .cta {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
+            background-color: var(--card-bg);
+            color: var(--text-color);
             text-align: center;
         }
         .cta h2 {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
         /* Contact Section */
         .contact {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary-bg);
         }
         form {
             max-width: 600px;
@@ -170,27 +180,34 @@
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--accent-color);
             border-radius: 4px;
             font-family: 'Montserrat', sans-serif;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 5px var(--accent-color);
         }
         .social-links {
             text-align: center;
             margin-top: 30px;
         }
         .social-links a {
-            color: var(--primary-color);
+            color: var(--accent-color);
             font-size: 1.5rem;
             margin: 0 10px;
             transition: color 0.3s ease;
         }
         .social-links a:hover {
-            color: var(--accent-color);
+            color: var(--accent-hover);
         }
         /* Footer */
         footer {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
+            background-color: var(--primary-bg);
+            color: var(--text-color);
             text-align: center;
             padding: 20px 0;
         }
@@ -226,10 +243,10 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm Nizar Hosni, a sales funnel expert specializing in luxury real estate. With years of experience in creating optimized funnels, I deliver high-quality leads that convert.</p>
+                    <p>I'm Nizar Hosni, a dedicated sales funnel strategist with a strong focus on luxury real estate. Through my extensive research and application of cutting-edge techniques, I design and optimize high-converting sales funnels that consistently deliver quality leads. With a deep understanding of the luxury market and a commitment to data-driven results, I ensure that every funnel I create is tailored to the unique needs of high-end clientele, turning prospects into loyal customers.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://via.placeholder.com/300x300.png?text=Nizar+Hosni" alt="Nizar Hosni">
+                    <img src="https://via.placeholder.com/300x300.png?text=Nizar+Hosni" alt="VangaurdEstateIcon">
                 </div>
             </div>
         </div>
@@ -237,7 +254,7 @@
 
     <section id="services" class="services">
         <div class="container">
-            <h2>What I Offer</h2>
+            <h2>What We Offer</h2>
             <div class="services-grid">
                 <div class="service-item">
                     <i class="fas fa-funnel-dollar"></i>
@@ -272,7 +289,7 @@
         <div class="container">
             <h2>Client Testimonials</h2>
             <div class="testimonial-card">
-                <p>"Nizar's funnels transformed our client acquisition process! We now generate premium leads effortlessly."</p>
+                <p>"VanguardEState's funnels transformed our client acquisition process! We now generate premium leads effortlessly."</p>
                 <p><strong>- Jane Doe, Luxury Realty Inc.</strong></p>
             </div>
         </div>
@@ -298,13 +315,13 @@
                 <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
-            <p>Email: nizar@example.com | Phone: +1 (123) 456-7890</p>
+            <p>Email: VanguardEstate@example.com | Phone: +1 (123) 456-7890</p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Nizar Hosni. All rights reserved.</p>
+            <p>&copy; 2024 VanguardEstate. All rights reserved.</p>
         </div>
     </footer>
 
